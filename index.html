@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SITTA UT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="card">
+            <h2>SITTA UT</h2>
+            <div id="alertMessage" class="alert"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Masukkan email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Masukkan password">
+                </div>
+                <button type="submit" class="btn">Masuk</button>
+            </form>
+            <div class="form-links">
+                <a href="#" onclick="openModal('modalLupa')">Lupa Password?</a>
+                <a href="#" onclick="openModal('modalDaftar')">Belum punya akun? Daftar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Lupa Password -->
+    <div id="modalLupa" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modalLupa')">&times;</span>
+            <h3>Lupa Password</h3>
+            <p style="margin-top: 10rem;">Silakan hubungi Administrator UT Daerah Anda untuk mereset password Anda.</p>
+        </div>
+    </div>
+
+    <!-- Modal Daftar -->
+    <div id="modalDaftar" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modalDaftar')">&times;</span>
+            <h3>Pendaftaran Akun Baru</h3>
+            <p style="margin-top: 10rem;">Pendaftaran akun SITTA hanya dilakukan oleh Unit Kerja / UPBJJ-UT secara terpusat.</p>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

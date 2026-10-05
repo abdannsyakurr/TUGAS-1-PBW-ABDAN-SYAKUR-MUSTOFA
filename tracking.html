@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracking">
+  <header class="navbar" id="navbar"></header>
+  <section class="hero small"><div class="hero-inner"><div>
+    <h1>Tracking Pengiriman</h1><p>Masukkan Nomor Delivery Order untuk melihat status dan perjalanan paket.</p>
+  </div></div></section>
+  <main class="wrap">
+    <section class="panel">
+      <form id="trackForm" class="search" novalidate>
+        <div class="form-group">
+          <label for="nomorDO">Nomor Delivery Order</label>
+          <input type="text" id="nomorDO" placeholder="Contoh: 2023001234" inputmode="numeric">
+          <div class="err" id="doErr"></div>
+        </div>
+        <button type="submit" class="btn" style="margin-bottom:22px">Cari</button>
+      </form>
+      <div id="hasil" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer>© 2026 Universitas Terbuka · SITTA</footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

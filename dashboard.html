@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <header class="navbar" id="navbar"></header>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="badge" id="role">-</span>
+        <h1 id="greeting">Selamat datang!</h1>
+        <p>Dashboard Aplikasi SITTA. Pantau stok, pengiriman, dan transaksi bahan ajar dalam satu tempat.</p>
+      </div>
+      <div class="clock"><b id="clock">--:--</b><span id="date"></span></div>
+    </div>
+  </section>
+  <main class="wrap">
+    <section class="stats" aria-label="Ringkasan">
+      <div class="panel stat"><div class="label">Judul bahan ajar</div><div class="num" id="statJudul">0</div></div>
+      <div class="panel stat"><div class="label">Total stok</div><div class="num" id="statStok">0</div></div>
+      <div class="panel stat"><div class="label">Delivery Order tercatat</div><div class="num" id="statDO">0</div></div>
+    </section>
+    <h2>Akses cepat</h2>
+    <section class="quick">
+      <a class="q-card" href="stok.html"><div class="ico">📚</div><h3>Informasi Bahan Ajar</h3><p>Lihat dan tambah data stok bahan ajar.</p></a>
+      <a class="q-card" href="tracking.html"><div class="ico">🚚</div><h3>Tracking Pengiriman</h3><p>Lacak paket dengan Nomor Delivery Order.</p></a>
+    </section>
+  </main>
+  <footer>© 2026 Universitas Terbuka · SITTA</footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

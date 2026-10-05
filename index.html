@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <div class="login-page">
+    <aside class="login-side">
+      <div class="logo"><img src="assets/logo-ut.png" alt="Logo UT" onerror="this.parentNode.textContent='UT'"></div>
+      <h1>SITTA UT</h1>
+      <p>Sistem Informasi Tiras dan Transaksi Bahan Ajar Universitas Terbuka. Kelola stok dan pantau pengiriman bahan ajar dari UT-Daerah.</p>
+    </aside>
+    <main class="login-main">
+      <section class="login-card">
+        <h2>Selamat Datang</h2>
+        <p style="color:var(--muted);margin:4px 0 22px">Masuk dengan akun SITTA Anda.</p>
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="nama@ut.ac.id" autocomplete="username">
+            <div class="err" id="emailErr"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password" autocomplete="current-password">
+            <div class="err" id="passErr"></div>
+          </div>
+          <button type="submit" class="btn block">Login</button>
+        </form>
+        <div class="links">
+          <button type="button" onclick="openModal('modalLupa')">Lupa Password?</button>
+          <button type="button" onclick="openModal('modalDaftar')">Belum punya akun? Daftar</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalLupa" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="close" aria-label="Tutup" onclick="closeModal('modalLupa')">&times;</button>
+      <h3>Lupa Password</h3>
+      <p>Silakan hubungi Administrator UT Daerah Anda untuk mereset password.</p>
+    </div>
+  </div>
+  <div id="modalDaftar" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="close" aria-label="Tutup" onclick="closeModal('modalDaftar')">&times;</button>
+      <h3>Pendaftaran Akun Baru</h3>
+      <p>Pendaftaran akun SITTA dilakukan oleh Unit Kerja / UPBJJ-UT secara terpusat.</p>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

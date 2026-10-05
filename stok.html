@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Bahan Ajar - SITTA UT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+  <header class="navbar" id="navbar"></header>
+  <section class="hero small"><div class="hero-inner"><div>
+    <h1>Informasi Bahan Ajar</h1><p>Peragaan data stok bahan ajar di seluruh lokasi.</p>
+  </div></div></section>
+  <main class="wrap">
+    <section class="panel">
+      <div class="toolbar">
+        <input type="search" id="cari" placeholder="Cari judul atau kode barang…" style="max-width:320px" aria-label="Cari bahan ajar">
+        <button class="btn" id="btnTambah">+ Tambah Stok</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Cover</th><th>Kode Lokasi</th><th>Kode Barang</th><th>Nama Barang</th><th>Jenis</th><th>Edisi</th><th>Stok</th></tr></thead>
+          <tbody id="stokBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="modalStok" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="close" aria-label="Tutup" onclick="closeModal('modalStok')">&times;</button>
+      <h3>Tambah Stok Baru</h3>
+      <form id="stokForm" novalidate>
+        <div class="form-group"><label for="fLokasi">Kode Lokasi</label><input id="fLokasi" placeholder="0JKT01"></div>
+        <div class="form-group"><label for="fKode">Kode Barang</label><input id="fKode" placeholder="EKMA4116"></div>
+        <div class="form-group"><label for="fNama">Nama Barang</label><input id="fNama"></div>
+        <div class="form-group"><label for="fJenis">Jenis Barang</label>
+          <select id="fJenis"><option>BMP</option><option>NonBMP</option></select></div>
+        <div class="form-group"><label for="fEdisi">Edisi</label><input id="fEdisi" type="number" min="1"></div>
+        <div class="form-group"><label for="fStok">Stok</label><input id="fStok" type="number" min="0"></div>
+        <div class="err" id="stokErr"></div>
+        <button type="submit" class="btn block">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>© 2026 Universitas Terbuka · SITTA</footer>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

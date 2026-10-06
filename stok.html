@@ -38,6 +38,9 @@
           <select id="fJenis"><option>BMP</option><option>NonBMP</option></select></div>
         <div class="form-group"><label for="fEdisi">Edisi</label><input id="fEdisi" type="number" min="1"></div>
         <div class="form-group"><label for="fStok">Stok</label><input id="fStok" type="number" min="0"></div>
+        <div class="form-group"><label for="fCover">Cover Buku</label>
+          <input id="fCover" type="file" accept="image/*">
+          <img id="coverPreview" class="cover-preview" alt="Preview cover" style="display:none"></div>
         <div class="err" id="stokErr"></div>
         <button type="submit" class="btn block">Simpan</button>
       </form>

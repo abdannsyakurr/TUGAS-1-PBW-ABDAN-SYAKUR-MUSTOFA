@@ -146,12 +146,29 @@ if (page === 'stok' && user) {
     tampil(dataBahanAjar.filter((b) => b.namaBarang.toLowerCase().includes(k) || b.kodeBarang.toLowerCase().includes(k)));
   });
 
-  $('btnTambah').onclick = () => { $('stokForm').reset(); $('stokErr').textContent = ''; openModal('modalStok'); };
+  let coverBaru = '';
+  const resetCover = () => { coverBaru = ''; $('coverPreview').style.display = 'none'; $('coverPreview').removeAttribute('src'); };
+  $('btnTambah').onclick = () => { $('stokForm').reset(); $('stokErr').textContent = ''; resetCover(); openModal('modalStok'); };
+
+  $('fCover').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    $('stokErr').textContent = '';
+    if (!file) { resetCover(); return; }
+    if (!file.type.startsWith('image/')) {
+      $('stokErr').textContent = 'File cover harus berupa gambar.'; e.target.value = ''; resetCover(); return;
+    }
+    if (file.size > 2 * 1024 * 1024) {
+      $('stokErr').textContent = 'Ukuran cover maksimal 2 MB.'; e.target.value = ''; resetCover(); return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => { coverBaru = reader.result; $('coverPreview').src = coverBaru; $('coverPreview').style.display = 'block'; };
+    reader.readAsDataURL(file);
+  });
   $('stokForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const v = (id) => $(id).value.trim();
     const b = { kodeLokasi: v('fLokasi'), kodeBarang: v('fKode'), namaBarang: v('fNama'),
-                jenisBarang: v('fJenis'), edisi: v('fEdisi'), stok: parseInt(v('fStok'), 10), cover: '' };
+                jenisBarang: v('fJenis'), edisi: v('fEdisi'), stok: parseInt(v('fStok'), 10), cover: coverBaru };
     if (!b.kodeLokasi || !b.kodeBarang || !b.namaBarang || !b.edisi) { $('stokErr').textContent = 'Semua kolom wajib diisi.'; return; }
     if (isNaN(b.stok) || b.stok < 0) { $('stokErr').textContent = 'Stok harus berupa angka 0 atau lebih.'; return; }
     if (dataBahanAjar.some((x) => x.kodeBarang.toLowerCase() === b.kodeBarang.toLowerCase())) {

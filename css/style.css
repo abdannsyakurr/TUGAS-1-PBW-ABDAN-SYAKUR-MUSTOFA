@@ -122,3 +122,4 @@ td img{width:48px;height:64px;object-fit:cover;border-radius:6px;background:var(
  .dropdown{position:static;background:rgba(255,255,255,.08);box-shadow:none}.dropdown a{color:#e8eef7}
 }
 @media(max-width:520px){.stats,.quick{grid-template-columns:1fr}}
+.cover-preview{width:96px;height:128px;object-fit:cover;border-radius:8px;margin-top:10px;border:1px solid var(--line);background:var(--soft)}
